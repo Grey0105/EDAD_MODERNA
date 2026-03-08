@@ -67,6 +67,7 @@ h1{
 }
 
 .titulito{
+    margin-bottom: 10px;
     color :#904212;
     font-size: 70px;
     text-align: center;
@@ -252,8 +253,9 @@ div{
 
 
 .tit{
+    margin-bottom: 5px;
     text-align: center;
-    font-size: 30px;
+    font-size: 1.5em;
 }
 
 .cena{
@@ -323,7 +325,7 @@ div{
 
 
 .contcar{
-    border: 1px solid rgb(0, 173, 14);
+    border: 1px solid#BF4900;
     height: 500px;
     overflow: hidden;
     margin-bottom: 30px;
@@ -401,11 +403,15 @@ div{
     background-color:#e2c57d;
     text-align: center;
     padding: 5px;
-    color: #FFFF;
-    font-size: 40px;
+    
+    
     border-radius: 20px;
     box-shadow: 0 0px 10px 5px #960000;
     -webkit-text-stroke: rgb(150, 0, 0);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;    
+    align-items: center;  
     /*width: 500px;
   height: 500px;
   border: 3px solid #ee2b7b;
@@ -438,8 +444,14 @@ div{
 
 
 .gridtexto{
-    text-align: center;
-    height: auto;
+    margin-top: 0;
+    color : #371A0A;
+    font-size: 100%; 
+    padding: 20px;
+    font-style: normal; /*cambiar font*/
+    text-align: justify; /*todo centrado*/
+    line-height: 1.5; /*interlineado*/
+    letter-spacing: 1px; /*entre mjás pixeles, más espacio*/
     
 }
 
@@ -451,6 +463,7 @@ div{
 
 
 .MIGUELANGELBODY{
+    
     width: max(1000px, 100%);
     height: max(1000px, 100%);
 }
@@ -525,21 +538,6 @@ div{
     border: 1px #904212 solid;
 }
 
-.barraSuperior{
-    display: grid;
-    grid-template-columns: 50% 50% ;
-    row-gap: 20px;
-    z-index: 1000;
-    height: 8,5%;
-  /*  background-color:rgb(120, 48, 48); */
-    background-color:rgb(156, 63, 28); 
-    width: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-
-}
-
 .barraSuperiorNoche{
     
     display: grid;
@@ -555,10 +553,30 @@ div{
 }
 
 
+
+
+.barraSuperior{
+    display: grid;
+    grid-template-columns: 50% 50% ;
+    row-gap: 20px;
+    background-color:rgb(156, 63, 28); 
+    height: 8,5%;
+  /*  background-color:rgb(120, 48, 48); */
+    z-index: 1000;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+
+}
+
+
+
+
 .verticalcarrusel{
     display:flex;
     flex-direction: column;
-    animation: loop 25s linear infinite;
+    
    
 }
 
@@ -608,7 +626,7 @@ div{
 .registro{
     
     text-align: center;
-    font-size: 300%;
+    font-size:300%;
 }
 
 .formulario{
@@ -719,6 +737,23 @@ div{
     
 }
 
+.contenedorPopUpNoche{
+    margin: auto;
+  
+    padding: auto;
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    gap: 16px;
+    width: 90%;
+    height: 70%;
+    max-width: 800px;
+    max-height: 700px;
+    margin: auto;
+    background-color: #511011;
+    border:#e07070 5px solid;
+    
+}
 
 
 .cerrarPopUp{
@@ -731,18 +766,34 @@ div{
 }
 
 .h1popup{
-    margin-top: 10vh;
+    margin-top: 20px;
+    text-align: center;
+    
+}
+
+.h1popupNoche{
+    color:#f88787c5 ;
+    margin-top: 20px;
     text-align: center;
     
 }
 
 .ppopup{
+    padding: 10px;
     text-decoration: none;
     margin-top: 1px;
-    font-size: 3vh;
+    font-size: 1.3em;
     text-align: center;
 }
 
+.ppopupNoche{
+    padding: 10px;
+    color: #ffffff;
+    text-decoration: none;
+    margin-top: 1px;
+    font-size: 1.3em;
+    text-align: center;
+}
 
 
 
@@ -757,6 +808,8 @@ div{
     opacity: 0;
     transition: opacity 0.3s ease;
     pointer-events: none;
+    align-items: center;
+    justify-content: center;
 }
 
 .mostrarquiz{
@@ -769,17 +822,22 @@ div{
     left: 0;
     display: flex;
     transition: opacity 0.3s ease;
+    align-items: center;
+    justify-content: center;
 }
 
 .contenedorquiz{
-     margin: auto;
+    
+    margin: 80px auto 20px; 
     padding: 50px;
     display: flex;
     position: relative;
     flex-direction: column;
     gap: 16px;
     width: 30%;
-    height: 50%;
+    height: fit-content;       
+    max-height: 85vh;          
+    overflow-y: auto;          
     background-color: #eed8a1;
     border: #781111 5px solid;
 }
@@ -823,7 +881,11 @@ quiz00{
     color: white;
 }
 
-
+#respuestaboton {
+    display: flex;
+    flex-direction: column;  /* botones en fila vertical */
+    width: 100%;
+}
 
 
 
@@ -847,6 +909,14 @@ quiz00{
     background-color: rgb(241, 71, 71);
 }
 
+
+@media (max-width: 768px) {
+    .contenedorquiz {
+        width: 85%;
+        padding: 20px;
+        margin-top: 70px; 
+    }
+}
 
 
 
