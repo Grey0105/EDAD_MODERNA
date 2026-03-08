@@ -75,7 +75,7 @@ h1{
     line-height: 1; /*interlineado*/
     letter-spacing: 1px; /*entre mjás pixeles, más espacio*/
     font-family: Luxurious Roman;
-   
+   margin-top: calc(7vh + 20px);
     background-color: #e4ca87c4;
     border: #BF4900 5px solid;
     border-radius: 20px;
@@ -91,7 +91,7 @@ h1{
     line-height: 1; /*interlineado*/
     letter-spacing: 1px; /*entre mjás pixeles, más espacio*/
     font-family: Luxurious Roman;
-   
+    margin-top: calc(7vh + 20px);
     background-color: #511011c9;
     border: #e07070 5px solid;
     border-radius: 20px;
@@ -529,7 +529,7 @@ div{
     display: grid;
     grid-template-columns: 50% 50% ;
     row-gap: 20px;
-    
+    z-index: 1000;
     height: 8,5;
   /*  background-color:rgb(120, 48, 48); */
     background-color:rgb(156, 63, 28); 
@@ -545,7 +545,7 @@ div{
     display: grid;
     grid-template-columns: 50% 50% ;
     row-gap: 20px;
-    
+    z-index: 1000;
     height: 8,5%;
      background-color:  #511011;
     width: 100%;
@@ -846,6 +846,7 @@ quiz00{
 .incorrecta{
     background-color: rgb(241, 71, 71);
 }
+
 
 
 
