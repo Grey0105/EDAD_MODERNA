@@ -544,7 +544,7 @@ div{
     grid-template-columns: 50% 50% ;
     row-gap: 20px;
     z-index: 1000;
-    height: 1px;
+    height: 30px;
      background-color:  #511011;
     width: 100%;
     position: fixed;
@@ -560,7 +560,7 @@ div{
     grid-template-columns: 50% 50% ;
     row-gap: 20px;
     background-color:rgb(156, 63, 28); 
-    height: 1px;
+    height: 30px;
   /*  background-color:rgb(120, 48, 48); */
     z-index: 1000;
     width: 100%;
@@ -917,6 +917,7 @@ quiz00{
         margin-top: 70px; 
     }
 }
+
 
 
 
