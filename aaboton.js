@@ -1,9 +1,72 @@
-
 //POP UP VARIABLES
 
+document.addEventListener('DOMContentLoaded', () => {
+    const carrusel = document.querySelector('.verticalcarrusel');
+    const elementos = Array.from(carrusel.children);
 
 
+    elementos.forEach(el => {
+        const clon = el.cloneNode(true);
+        carrusel.appendChild(clon);
+    });
 
+  
+    const imagenes = carrusel.querySelectorAll('img');
+    let cargadas = 0;
+
+    function iniciarCarrusel() {
+       
+        const alturaOriginal = carrusel.scrollHeight / 2;
+
+   
+        const styleSheet = document.createElement('style');
+        styleSheet.textContent = `
+            @keyframes loopExacto {
+                0%   { transform: translateY(0); }
+                100% { transform: translateY(-${alturaOriginal}px); }
+            }
+        `;
+        document.head.appendChild(styleSheet);
+
+        carrusel.style.animation = 'loopExacto 25s linear infinite';
+    }
+
+ 
+    imagenes.forEach(img => {
+        if (img.complete) {
+            cargadas++;
+            if (cargadas === imagenes.length) iniciarCarrusel();
+        } else {
+            img.addEventListener('load', () => {
+                cargadas++;
+                if (cargadas === imagenes.length) iniciarCarrusel();
+            });
+            img.addEventListener('error', () => {
+                cargadas++;
+                if (cargadas === imagenes.length) iniciarCarrusel();
+            });
+        }
+    });
+});
+
+let vent1 = document.getElementById("pop1");
+let vent2 = document.getElementById("pop2");
+let vent3 = document.getElementById("pop3");
+let vent4 = document.getElementById("pop4");
+let vent5 = document.getElementById("pop5");
+
+let hpop1 = document.getElementById("h1pop1")
+let hpop2 = document.getElementById("h1pop2")
+let hpop3 = document.getElementById("h1pop3")
+let hpop4 = document.getElementById("h1pop4")
+let hpop5 = document.getElementById("h1pop5")
+
+
+let papop1 = document.getElementById("pp1");
+let papop2 = document.getElementById("pp2");
+let papop3 = document.getElementById("pp3");
+let papop4 = document.getElementById("pp4");
+let papop5 = document.getElementById("pp5");
 
 
 let titulo1 = document.getElementById("titulote");
@@ -62,9 +125,30 @@ nochebotto.addEventListener('click', () => {
     hunoo4.setAttribute("class", "h1noche");
     hunoo5.setAttribute("class", "h1noche");
 
+    
     barrasuperiorr.setAttribute("class", "barraSuperiorNoche")
     valoraciónn.setAttribute("class", "valoracionnoche barracont text")
     imagen1.src = "arconoche.png";
+
+    vent1.setAttribute("class", "contenedorPopUpNoche")
+    vent2.setAttribute("class", "contenedorPopUpNoche")
+    vent4.setAttribute("class", "contenedorPopUpNoche")
+    vent5.setAttribute("class", "contenedorPopUpNoche")
+    vent3.setAttribute("class", "contenedorPopUpNoche")
+
+    hpop1.setAttribute("class", "h1popupNoche")
+    hpop2.setAttribute("class", "h1popupNoche")
+    hpop3.setAttribute("class", "h1popupNoche")
+    hpop4.setAttribute("class", "h1popupNoche")
+    hpop5.setAttribute("class", "h1popupNoche")
+
+    papop1.setAttribute("class", "ppopupNoche");
+    papop3.setAttribute("class", "ppopupNoche");
+    papop2.setAttribute("class", "ppopupNoche");
+    papop4.setAttribute("class", "ppopupNoche");
+    papop5.setAttribute("class", "ppopupNoche");
+
+        
     })
 
 
@@ -85,9 +169,30 @@ diaboton.addEventListener('click', () => {
     hunoo4.setAttribute("class", "h1");
     hunoo5.setAttribute("class", "h1");
 
+    
+    
     barrasuperiorr.setAttribute("class", "barraSuperior")
     valoraciónn.setAttribute("class", "valoracion barracont text")
     imagen1.src = "arcoflecha.png";
+    vent1.setAttribute("class", "contenedorPopUp")
+    vent2.setAttribute("class", "contenedorPopUp")
+    vent4.setAttribute("class", "contenedorPopUp")
+    vent5.setAttribute("class", "contenedorPopUp")
+    vent3.setAttribute("class", "contenedorPopUp")
+
+    hpop1.setAttribute("class", "h1popup")
+    hpop2.setAttribute("class", "h1popup")
+    hpop3.setAttribute("class", "h1popup")
+    hpop4.setAttribute("class", "h1popup")
+    hpop5.setAttribute("class", "h1popup")
+
+    papop1.setAttribute("class", "ppopup");
+    papop3.setAttribute("class", "ppopup");
+    papop2.setAttribute("class", "ppopup");
+    papop4.setAttribute("class", "ppopup");
+    papop5.setAttribute("class", "ppopup");
+
+   
 })
 
 
@@ -208,19 +313,9 @@ cerrar5.addEventListener('click', ()=>{
 
 
 
-let vent1 = document.getElementById("pop1");
 
 
-nochebotto.addEventListener('click', () => {
-   
-    vent1.setAttribute("class", "popupnoche")
-})
 
-
-diaboton.addEventListener('click', () => {
-    vent1.setAttribute("class", " ")
-    
-})
 
 
 
@@ -314,11 +409,12 @@ let preguntaActual = 0;
 let puntaje = 0;
 
 function iniciarQuiz(){
-
+    document.getElementById("respuestaboton").style.display = "flex";
     preguntaActual = 0;
     puntaje = 0;
     siguientee.innerHTML="Siguiente";
     mostrarPregunta();
+    
 
 }
 
@@ -378,8 +474,9 @@ function mostrarPuntaje(){
     
    
     preguntas0.innerHTML = `Tu puntaje es ${puntaje} de ${preguntas.length}`;
-    siguientee.innerHTML="Jugar de nuevo";
+    siguientee.innerHTML = "Jugar de nuevo";
     siguientee.style.display = "block";
+    document.getElementById("respuestaboton").style.display = "none";
   
 }
 
@@ -402,6 +499,5 @@ siguientee.addEventListener('click', ()=>{
         iniciarQuiz();
     }
 })
-
 
 iniciarQuiz()
