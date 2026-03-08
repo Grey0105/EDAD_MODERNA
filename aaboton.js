@@ -54,7 +54,7 @@ nochebotto.addEventListener('click', () => {
     parrafoss3.setAttribute("class", "pnoche");
     parrafoss4.setAttribute("class", "pnoche");
     parrafoss5.setAttribute("class", "pnoche");
-    popp1.setAttribute("popupnoche")
+    
 
     hunoo.setAttribute("class", "h1noche");
     hunoo2.setAttribute("class", "h1noche");
@@ -402,5 +402,6 @@ siguientee.addEventListener('click', ()=>{
         iniciarQuiz();
     }
 })
+
 
 iniciarQuiz()
